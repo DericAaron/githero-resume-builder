@@ -21,11 +21,25 @@ class App extends Component {
         
         <br/>
         <br/>
-        <div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
+
+        {/* card area for testing */}
+        <div className="card">
+          <div className="card-header">
+            <h5>Project Name</h5>
+            <br/>
+            <div>
+              <button>Source</button>
+              <button>Git</button>
+            </div>
+            
+          </div>
+
+          <img src="https://img1.southernliving.timeinc.net/sites/default/files/styles/story_card_hero/public/image/2017/07/main/slow-cooker_pork_tacos_with_fresh_tomato_salsa_2487601_summe_0064.jpg?itok=Xdg39X7i" alt=""/>
+
+          <div className="description">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et obcaecati vel pariatur cupiditate quia ratione porro deleniti, unde sunt quae aspernatur temporibus voluptate laudantium dolorem expedita consequatur ea? Corporis, debitis?</p>
+          </div>
+        </div> 
         
       </div>
     );
