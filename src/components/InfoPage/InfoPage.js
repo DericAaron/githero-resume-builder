@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Button from '@material-ui/core/Button';
-
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 const mapStateToProps = state => ({
@@ -25,17 +23,11 @@ class InfoPage extends Component {
 
     if (this.props.user.userName) {
       content = (
-        <div>
-          <h1>Profile</h1>
-
-          <input type="text" placeholder="Name"/>
-          <input type="text" placeholder="Github Account"/>
-          <input type="text" placeholder="Email Address"/>
-          <br/>
-          <textarea rows="4" cols="50" placeholder="Personal Bio" maxlength="280"></textarea>
-          <br/>
-          <Button variant="contained" color="primary">Update</Button>
-        </div>
+        <h1
+            id="welcome"
+          >
+            Welcome, { this.props.user.userName }!
+          </h1>
       );
     }
 
