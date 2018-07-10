@@ -27,7 +27,7 @@ class Menu extends Component {
   render() {
 
     const menuItems = <List className="menulist">
-                        <Link to="/user">
+                        <Link to="/profile">
                         <ListItem button>
                             <ListItemText primary="Profile" />
                         </ListItem>
@@ -35,7 +35,7 @@ class Menu extends Component {
 
                         <Divider />
                         
-                        <Link to="/info">
+                        <Link to="/project-creator">
                         <ListItem button>
                             <ListItemText primary="Create Project" />
                         </ListItem>

@@ -13,6 +13,8 @@ const mapStateToProps = state => ({
 //User class
 class UserPage extends Component {
 
+  
+
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
     this.props.dispatch({type: 'GET_PROFILE'});

@@ -17,12 +17,6 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
-    console.log('In profile post request');
-    
-    res.sendStatus(200);
-});
-
 router.put('/', (req, res) => {
     console.log('In profile Put Request');
     const profile = req.body;
@@ -37,10 +31,6 @@ router.put('/', (req, res) => {
             
             res.sendStatus(500);
         });
-});
-
-router.delete('/:id', (req, res) => {
-    console.log('In profile delete request');
 });
 
 module.exports = router;
