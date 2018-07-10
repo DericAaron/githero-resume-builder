@@ -34,7 +34,7 @@ class InfoPage extends Component {
           <br/>
           <textarea rows="4" cols="50" placeholder="Personal Bio" maxlength="280"></textarea>
           <br/>
-          <Button variant="contained" color="primary">Submit</Button>
+          <Button variant="contained" color="primary">Update</Button>
         </div>
       );
     }

@@ -23,7 +23,22 @@ router.post('/register', (req, res, next) => {
 
   const queryText = 'INSERT INTO person (username, password) VALUES ($1, $2) RETURNING id';
   pool.query(queryText, [username, password])
-    .then(() => { res.sendStatus(201); })
+    .then((result) => {
+      
+      //create a base profile after user.
+      const id = result.rows[0].id;
+      console.log(id);
+      
+      const profileText = 'INSERT INTO profile (user_id) VALUES($1)';
+      pool.query(profileText, [id])
+        .then(() => { 
+          res.sendStatus(201);
+        })
+        .catch((err) => {
+          res.sendStatus(500);
+        });
+       
+    })
     .catch((err) => { next(err); });
 });
 

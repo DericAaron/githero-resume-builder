@@ -7,7 +7,9 @@ CREATE TABLE person (
 CREATE TABLE profile(
 	id serial primary key,
 	user_id INTEGER REFERENCES person NOT NULL,
-	resume_name VARCHAR(80) NOT NULL,
+	resume_name VARCHAR(80),
+	github_name VARCHAR(80),
+	email VARCHAR(80),
 	bio VARCHAR(280)
 );
 
