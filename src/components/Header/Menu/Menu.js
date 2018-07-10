@@ -18,15 +18,15 @@ class Menu extends Component {
         right: false
       };
     
-      toggleDrawer = (side, open) => () => {
+      toggleDrawer = (open) => () => {
         this.setState({
-          [side]: open,
+          right: open,
         });
       };
     
   render() {
 
-    const sideList = <List className="menulist">
+    const menuItems = <List className="menulist">
                         <ListItem button>
                             <Link to="/info"><ListItemText primary="Profile" /></Link>
                         </ListItem>
@@ -46,18 +46,18 @@ class Menu extends Component {
 
     return (
         <div >
-        <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer('right', true)}>
+        <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
             <MenuIcon />
         </IconButton>
 
-        <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
+        <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer(false)}>
           <div
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer('right', false)}
-            onKeyDown={this.toggleDrawer('right', false)}
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
             >
-                {sideList}
+                {menuItems}
             </div>
         </Drawer>
 
