@@ -1,0 +1,12 @@
+.header {
+    background-color: black;
+}
+.title {
+    position: absolute;
+    margin-left: 0px;
+}
+.title-action {
+    position: absolute;
+    display: flex;
+    right: 10px;
+}

@@ -16,9 +16,12 @@ import './styles/main.css';
 
 const App = () => (
   <div>
-    <Header title="Project Base" />
+   
     <Router>
+      <div>
+      <Header title="Project Base" />
       <Switch>
+      
         <Redirect exact from="/" to="/home" />
         <Route
           path="/home"
@@ -40,6 +43,7 @@ const App = () => (
         <Route render={() => <h1>404</h1>} />
 
       </Switch>
+      </div>
     </Router>
   </div>
 );
