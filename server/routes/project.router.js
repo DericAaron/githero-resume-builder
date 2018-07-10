@@ -16,10 +16,12 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     console.log('In Project Put Request');
+    res.sendStatus(200);
 });
 
 router.delete('/:id', (req, res) => {
     console.log('In project delete request');
+    res.sendStatus(200);
 });
 
 module.exports = router;
