@@ -42,6 +42,10 @@ class InfoPage extends Component {
     }
   }
 
+  submitProject() {
+    
+  }
+
   render() {
     let content = null;
 
