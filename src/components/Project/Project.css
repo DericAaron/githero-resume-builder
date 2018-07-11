@@ -1,0 +1,19 @@
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding-right: 10px;
+}
+
+.cardArea {
+    grid-column: 2/ span 3;
+}
+
+.protoField {
+    width: 100%;
+}
+
+.centered {
+    margin: auto;
+}
+

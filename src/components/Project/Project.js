@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Project.css';
+
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import ProjectCard from '../ProjectCard/ProjectCard';
 
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
@@ -44,16 +49,33 @@ class InfoPage extends Component {
       content = (
         <div>
           <h1>Project Creator</h1>
-
-          <div className="projectInput">
-            <input type="text" placeholder="Project Name" value={this.state.project_name} onChange={this.handleChange('project_name')}/>
-            <input type="text" placeholder="Image Url" value={this.state.image_url} onChange={this.handleChange('image_url')}/>
-            <input type="text" placeholder="Website Url" value={this.state.website_url} onChange={this.handleChange('website_url')}/>
-            <input type="text" placeholder="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
-            <input type="text" placeholder="Raw Code Url" value={this.state.raw_url} onChange={this.handleChange('raw_url')}/>
-            <input type="text" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
-            <Button variant="contained">Add Project</Button>
+          <div className="formGrid">
+            <Paper className="protoField">
+              <div className="centered">
+                <TextField type="text" label="Project Name" value={this.state.project_name} onChange={this.handleChange('project_name')}/>
+                <br/>
+                <TextField type="text" label="Image Url" value={this.state.image_url} onChange={this.handleChange('image_url')}/>
+                <br/>
+                <TextField type="text" label="Website Url" value={this.state.website_url} onChange={this.handleChange('website_url')}/>
+                <br/>
+                <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
+                <br/>
+                <TextField type="text" label="Raw Code Url" value={this.state.raw_url} onChange={this.handleChange('raw_url')}/>
+                <br/>
+                <TextField type="text" label="Description" value={this.state.description} onChange={this.handleChange('description')}/>
+                <br/>
+                <br/>
+                <Button variant="contained">Add Project</Button>
+              </div>
+            </Paper>
+            <div className="cardArea">
+              
+              <Paper className="protoField">
+                <ProjectCard project={this.state}/>
+              </Paper>
+            </div>
           </div>
+          
         </div>
       );
     }
