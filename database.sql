@@ -20,7 +20,7 @@ CREATE TABLE project(
 	image_url VARCHAR(280),
 	website_url VARCHAR(280),
 	git_repo VARCHAR(280),
-	raw_url VARCHAR(280),
+	rawCode VARCHAR(840),
 	description VARCHAR(280),
 	show_hide BOOLEAN Default true
 );

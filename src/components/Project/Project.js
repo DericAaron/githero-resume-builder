@@ -23,7 +23,7 @@ class InfoPage extends Component {
       image_url: '',
       website_url: '',
       git_repo: '',
-      raw_url: '',
+      rawCode: '',
       description: ''
     }
   }
@@ -60,9 +60,9 @@ class InfoPage extends Component {
                 <br/>
                 <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
                 <br/>
-                <TextField type="text" label="Raw Code Url" value={this.state.raw_url} onChange={this.handleChange('raw_url')}/>
+                <textarea type="text" maxLength="840" placeholder="Raw Code" value={this.state.rawCode} onChange={this.handleChange('rawCode')}/>
                 <br/>
-                <TextField type="text" label="Description" value={this.state.description} onChange={this.handleChange('description')}/>
+                <textarea type="text" maxLength="280" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
                 <br/>
                 <br/>
                 <Button variant="contained">Add Project</Button>

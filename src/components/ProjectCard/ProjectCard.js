@@ -15,7 +15,9 @@ class ProjectCard extends Component {
     constructor(props){
         super(props);
     
-        this.state = {view: 1}
+        this.state = {
+            view: 1
+        }
       }
 
   changeView = (newCase) => {
@@ -24,21 +26,23 @@ class ProjectCard extends Component {
 
   render() {
     let content = null;
-
     switch (this.state.view) {
         case 1: 
       content = (
-          <div>
-        <img src={this.props.project.image_url} alt=""/>
-                  <CardContent>
-                       
-                    <Typography component="p">
+        <div>
+            <a href={this.props.project.website_url} target="_blank">
+                <img src={this.props.project.image_url} alt=""/>
+            </a>
+            <CardContent>     
+                <h5>Description:</h5>              
+                <Typography component="p">
+                    
                       {
                         this.props.project.description
                       }
-                    </Typography>
-                  </CardContent>
-                  </div>
+                </Typography>
+            </CardContent>
+        </div>
       )
       break;
 
@@ -46,11 +50,11 @@ class ProjectCard extends Component {
       content = (
                 
           <CardContent>
-            <Typography component="p">
+            <pre><code>
               {
-                this.props.project.raw_url
+                this.props.project.rawCode
               }
-            </Typography>
+            </code></pre>
           </CardContent>
 
     )
@@ -75,7 +79,7 @@ class ProjectCard extends Component {
                     <IconButton onClick={() => this.changeView(2)}>
                       <Developer />
                     </IconButton>
-                    <IconButton>
+                    <IconButton href={this.props.project.git_repo} target="_blank">
                         <MoreVertIcon />
                     </IconButton>
                     </span>
