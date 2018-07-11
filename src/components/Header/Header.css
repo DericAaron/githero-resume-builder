@@ -1,3 +1,9 @@
+.bar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; /* required */
+}
+
 .header {
     background-color: black;
 }

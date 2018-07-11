@@ -52,7 +52,7 @@ class Header extends Component {
 
     return (
         <div >
-          <AppBar position="static">
+          <AppBar className="bar">
             <Toolbar className="header">
               <div className="title">
                 <Typography variant="title" color="inherit" >
