@@ -11,6 +11,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import Profile from './components/Profile/Profile';
 import Project from './components/Project/Project';
+import Portfolio from './components/Portfolio/Portfolio';
 
 import './styles/main.css';
 
@@ -38,6 +39,11 @@ const App = () => (
         <Route
           path="/project-creator"
           component={Project}
+        />
+
+        <Route
+          path="/portfolio"
+          component={Portfolio}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />

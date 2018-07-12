@@ -43,9 +43,11 @@ class Menu extends Component {
 
                         <Divider />
 
+                        <Link to="/portfolio">
                         <ListItem button>
                             <ListItemText primary="Portfolio" />
                         </ListItem>
+                        </Link>
                     </List>;
 
     return (
