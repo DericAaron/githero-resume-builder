@@ -14,11 +14,21 @@
   
   .container {
     position: relative;
-    width: 100%;
+    width: 702px;
+    margin: auto;
   }
   
   .headText {
-    font-size: 300%;
     position: absolute;
-    left: 20%;
+    left: 5%;
+  }
+
+  .headText h1{
+    font-size: 300%;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+
+  .headText p {
+      margin-top: 0px;
   }

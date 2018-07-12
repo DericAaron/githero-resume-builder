@@ -1,0 +1,11 @@
+.resumeGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    padding-right: 10px;
+}
+
+.resumeField {
+    width: 100%;
+    grid-column: 3/ span 3;
+}

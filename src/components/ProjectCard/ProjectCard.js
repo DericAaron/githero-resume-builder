@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Web from '@material-ui/icons/WebAsset';
-import Developer from '@material-ui/icons/DeveloperMode';
+import Code from '@material-ui/icons/Code';
 
 class ProjectCard extends Component {
     constructor(props){
@@ -54,7 +54,7 @@ class ProjectCard extends Component {
               <h5>Sample Code:</h5>
             <pre><code>
               {
-                this.props.project.rawCode
+                this.props.project.rawcode
               }
             </code></pre>
           </CardContent>
@@ -79,7 +79,7 @@ class ProjectCard extends Component {
                         <Web/>
                       </IconButton>
                     <IconButton onClick={() => this.changeView(2)}>
-                      <Developer />
+                      <Code />
                     </IconButton>
                     <IconButton href={this.props.project.git_repo} target="_blank">
                         <MoreVertIcon />

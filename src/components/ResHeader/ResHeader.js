@@ -8,11 +8,14 @@ class ResHeader extends Component {
     return (
         <div className="container">
           <div className="nameOverlay">
-            <h1 className="headText">Deric Aaron</h1>
+            <div className="headText">
+            <h1>{this.props.profile.resume_name}</h1>
+            <p>Email: {this.props.profile.email}</p>
+            </div>
+            
           </div>
-          <img src="https://ghchart.rshah.org/DericAaron" alt="" className="headerImg"/>
+          <img src={"https://ghchart.rshah.org/"+this.props.profile.github_name} alt="" className="headerImg"/>
         </div>
-
     );
   }
 }

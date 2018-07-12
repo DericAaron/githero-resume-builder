@@ -4,7 +4,7 @@ import axios from '../../../node_modules/axios';
 
 function* fetchProject(action) {
     try {
-      const project = yield call(axios.get, 'api/project', action.payload);
+      const project = yield call(axios.get, 'api/project');
       yield put({type: 'SET_PROJECTS', payload: project.data});
     } catch (error) {
       console.log('Error in fetchProfileSaga');
