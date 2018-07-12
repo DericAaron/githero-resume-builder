@@ -11,6 +11,7 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 const mapStateToProps = state => ({
   user: state.user,
+  profile: state.profile.profileEdit.id
 });
 
 class InfoPage extends Component {
@@ -34,6 +35,7 @@ class InfoPage extends Component {
 
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
+    this.props.dispatch({type: 'GET_PROFILE'});
   }
 
   componentDidUpdate() {
@@ -42,8 +44,9 @@ class InfoPage extends Component {
     }
   }
 
-  submitProject() {
-    
+  submitProject = () => {
+    const action = {type: 'SUBMIT_PROJECT', payload: {profile_id: this.props.profile, ...this.state}};
+    this.props.dispatch(action);
   }
 
   render() {
@@ -69,7 +72,7 @@ class InfoPage extends Component {
                 <textarea type="text" maxLength="280" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
                 <br/>
                 <br/>
-                <Button variant="contained">Add Project</Button>
+                <Button variant="contained" onClick={this.submitProject}>Add Project</Button>
               </div>
             </Paper>
             <div className="cardArea">

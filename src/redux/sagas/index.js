@@ -10,6 +10,7 @@ export default function* rootSaga() {
     userSaga(),
     loginSaga(),
     profileSaga(),
+    projectSaga(),
     // watchIncrementAsync()
   ]);
 }

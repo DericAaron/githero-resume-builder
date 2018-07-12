@@ -25,6 +25,7 @@ class ProjectCard extends Component {
   }
 
   render() {
+    
     let content = null;
     switch (this.state.view) {
         case 1: 
@@ -50,6 +51,7 @@ class ProjectCard extends Component {
       content = (
                 
           <CardContent>
+              <h5>Sample Code:</h5>
             <pre><code>
               {
                 this.props.project.rawCode
