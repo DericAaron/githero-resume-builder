@@ -39,11 +39,14 @@ class Portfolio extends Component {
             <br/>
             <div className="resumeGrid">
               {
-                  this.props.projects.map((projectItem, i) => 
-                    <Paper className="resumeField" key={i}>
-                        <ProjectCard project={projectItem}/>
-                    </Paper>
-                    )
+                this.props.projects.map((projectItem, i) => {
+                  if(projectItem.show_hide){
+                    return(<Paper className="resumeField" key={i}>
+                            <ProjectCard project={projectItem}/>
+                            </Paper>)
+                    }
+                  }  
+                )
               }
               {/* Map over project array here */}
               
