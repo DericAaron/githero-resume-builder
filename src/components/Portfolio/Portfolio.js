@@ -38,6 +38,7 @@ class Portfolio extends Component {
           <ResHeader profile={this.props.profile}/>
             <br/>
             <div className="resumeGrid">
+
               {
                 this.props.projects.map((projectItem, i) => {
                   if(projectItem.show_hide){
@@ -48,9 +49,14 @@ class Portfolio extends Component {
                   }  
                 )
               }
-              {/* Map over project array here */}
-              
             </div>
+            <div className="bio">
+              <Paper >
+              <h5>Personal Bio</h5>
+                {this.props.profile.bio}
+              </Paper>
+            </div>
+            
         </div>
       );
     }

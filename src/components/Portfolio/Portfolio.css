@@ -9,3 +9,11 @@
     width: 100%;
     grid-column: 3/ span 3;
 }
+
+.bio {
+    text-align: center;
+    width: 25%;
+    position: absolute;
+    top: 174px;
+    left: 2%;
+}

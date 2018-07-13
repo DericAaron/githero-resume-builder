@@ -74,7 +74,7 @@ class InfoPage extends Component {
           <h1>Project Creator</h1>
           <div className="formGrid">
             <Paper className="protoField">
-              <div className="centered">
+              <div className="center">
                 <TextField type="text" label="Project Name" value={this.state.project_name} onChange={this.handleChange('project_name')}/>
                 <br/>
                 <TextField type="text" label="Image Url" value={this.state.image_url} onChange={this.handleChange('image_url')}/>
@@ -82,6 +82,7 @@ class InfoPage extends Component {
                 <TextField type="text" label="Website Url" value={this.state.website_url} onChange={this.handleChange('website_url')}/>
                 <br/>
                 <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
+                <br/>
                 <br/>
                 <textarea type="text" maxLength="840" placeholder="Raw Code" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
                 <br/>

@@ -26,9 +26,6 @@ class Header extends Component {
     // this.props.history.push('home');
   }
 
-  loginButton = () => {
-    this.props.history.push('home');
-  }
 
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
@@ -46,7 +43,7 @@ class Header extends Component {
 
     else {
       button = (
-        <Button color="inherit" onClick={this.loginButton}>Login</Button>
+        <Button color="inherit">Login</Button>
       );
     }
 
