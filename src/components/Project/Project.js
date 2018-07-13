@@ -14,6 +14,17 @@ const mapStateToProps = state => ({
   profile: state.profile.profileEdit.id
 });
 
+class ProjectIn {
+  constructor(){
+    this.project_name = '';
+    this.image_url = '';
+    this.website_url = '';
+    this.git_repo = '';
+    this.rawcode = '';
+    this.description = '';
+  }
+}
+
 class InfoPage extends Component {
 
   constructor(props){
@@ -27,6 +38,10 @@ class InfoPage extends Component {
       rawcode: '',
       description: ''
     }
+  }
+
+  clearInput() {
+    this.setState(new ProjectIn);
   }
 
   handleChange = (key) => (event) => {
@@ -47,6 +62,7 @@ class InfoPage extends Component {
   submitProject = () => {
     const action = {type: 'SUBMIT_PROJECT', payload: {profile_id: this.props.profile, ...this.state}};
     this.props.dispatch(action);
+    this.clearInput();
   }
 
   render() {
@@ -67,7 +83,7 @@ class InfoPage extends Component {
                 <br/>
                 <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
                 <br/>
-                <textarea type="text" maxLength="840" placeholder="Raw Code" value={this.state.rawCode} onChange={this.handleChange('rawcode')}/>
+                <textarea type="text" maxLength="840" placeholder="Raw Code" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
                 <br/>
                 <textarea type="text" maxLength="280" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
                 <br/>
