@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+import ProjectTable from  './ProjectTable/ProjectTable';
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -64,6 +65,8 @@ class UserPage extends Component {
     return (
       <div>
         { content }
+
+        <ProjectTable />
       </div>
     );
   }

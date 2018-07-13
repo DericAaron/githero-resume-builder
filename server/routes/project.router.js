@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
     const id = req.user.id;
 
     //narrow return later
-    queryText = `SELECT project_name, image_url, website_url, git_repo, rawcode, description, show_hide FROM project
+    queryText = `SELECT project.id, project_name, image_url, website_url, git_repo, rawcode, description, show_hide FROM project
                 JOIN profile ON project.profile_id = profile.id
                 JOIN person ON profile.user_id = person.id
-                WHERE person.id=$1`;
+                WHERE person.id=$1 ORDER BY id`;
     pool.query(queryText, [id])
         .then( (response) => {
             res.send(response.rows);
@@ -39,18 +39,34 @@ router.post('/', (req, res) => {
         .catch( (err) => {
             console.log('Error in post project');
             res.sendStatus(500);
-        })
-    res.sendStatus(200);
+        });
 }); //end post projects
 
-router.put('/:id', (req, res) => {
-    console.log('In Project Put Request');
-    res.sendStatus(200);
+router.put('/', (req, res) => {
+    const project = req.body;
+    const queryText = `UPDATE project SET show_hide=$1 WHERE id=$2`;
+
+    pool.query(queryText, [project.show_hide, project.id])
+        .then( (result) => {
+            res.sendStatus(200);
+        })
+        .catch( (err) => {
+            res.sendStatus(500);
+        });
 });
 
 router.delete('/:id', (req, res) => {
-    console.log('In project delete request');
-    res.sendStatus(200);
+    console.log('In project delete request', req.params.id);
+
+    const id = req.params.id;
+    const queryText = 'DELETE FROM project WHERE id=$1';
+    pool.query(queryText, [id])
+        .then( () => {
+            res.sendStatus(200);
+        })
+        .catch( () => {
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;
