@@ -1,0 +1,12 @@
+.profileGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding-right: 10px;
+}
+
+.profileGrid textarea {
+    width: 90%;
+    margin-left: 4%;
+    resize: none;
+}

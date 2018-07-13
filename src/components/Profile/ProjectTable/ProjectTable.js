@@ -28,23 +28,23 @@ class ProjectTable extends Component {
     return (
       <div>
         <Paper >
-      <Table >
-        <TableHead>
-          <TableRow>
-            <TableCell>Project</TableCell>
-            <TableCell>Show / Hide</TableCell>
-            <TableCell>Delete</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {
-              this.props.projects.map( projectItem =>    
-              <ProjectRow key={projectItem.id} projectItem={projectItem}/>
-            )
-          }
-        </TableBody>
-      </Table>
-    </Paper>
+            <Table >
+                <TableHead>
+                <TableRow>
+                    <TableCell>Project</TableCell>
+                    <TableCell>Show / Hide</TableCell>
+                    <TableCell>Delete</TableCell>
+                </TableRow>
+                </TableHead>
+                <TableBody>
+                {
+                    this.props.projects.map( projectItem =>    
+                    <ProjectRow key={projectItem.id} projectItem={projectItem}/>
+                    )
+                }
+                </TableBody>
+            </Table>
+        </Paper>
       </div>
     );
   }
