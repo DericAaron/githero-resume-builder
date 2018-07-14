@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     const queryText = `INSERT INTO project (profile_id, project_name, image_url, website_url, git_repo, rawcode, description)
                         VALUES($1, $2 ,$3 ,$4 ,$5 ,$6 ,$7)`;
 
-    pool.query(queryText, [project.profile_id, project.project_name, project.image_url, project.website_url, project.git_repo, project.rawCode, project.description])
+    pool.query(queryText, [project.profile_id, project.project_name, project.image_url, project.website_url, project.git_repo, project.rawcode, project.description])
         .then( (response) => {
             res.sendStatus(200);
         })

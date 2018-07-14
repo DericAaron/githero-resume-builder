@@ -8,6 +8,7 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import ResHeader from '../ResHeader/ResHeader';
+import AvatarImage from '../AvatarImage/AvatarImage';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -35,6 +36,7 @@ class Portfolio extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
+          
           <ResHeader profile={this.props.profile}/>
             <br/>
             <div className="resumeGrid">

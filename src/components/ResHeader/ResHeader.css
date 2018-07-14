@@ -21,7 +21,7 @@
   
   .headText {
     position: absolute;
-    left: 5%;
+    left: 100px;
   }
 
   .headText h1{
@@ -32,4 +32,14 @@
 
   .headText p {
       margin-top: 0px;
+  }
+  
+  .overContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #holder {
+    margin-left: 6%;
+    margin-top: 6%;
   }

@@ -49,7 +49,7 @@ class InfoPage extends Component {
   } // end change handler
 
   componentDidMount() {
-    this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
+    // this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
     this.props.dispatch({type: 'GET_PROFILE'});
   }
 

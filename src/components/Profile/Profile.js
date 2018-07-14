@@ -6,7 +6,6 @@ import './Profile.css';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import ProjectTable from  './ProjectTable/ProjectTable';
 import ResHeader from '../ResHeader/ResHeader';
-import AvatarImage from '../AvatarImage/AvatarImage';
 
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
@@ -60,8 +59,6 @@ class UserPage extends Component {
           <div className="profileGrid">
           <Paper>
             <ResHeader profile={this.props.profile}/>
-
-            <AvatarImage />
 
             <br/>
               <input type="text" placeholder="Name" value={this.props.profile.resume_name} onChange={this.change('resume_name')}/>
