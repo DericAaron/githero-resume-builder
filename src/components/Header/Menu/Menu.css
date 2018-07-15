@@ -1,3 +1,8 @@
 .menulist {
     width: 200px;
 }
+
+.menuAv {
+    width: 75px;
+    margin-left: 20px;
+}

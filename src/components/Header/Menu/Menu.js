@@ -29,7 +29,9 @@ class Menu extends Component {
 
     const menuItems = <List className="menulist">
                         <ListItem>
-                            <AvatarImage />
+                            <div className="MenuAv">
+                                <AvatarImage />
+                            </div>
                         </ListItem>
 
                         <Link to="/profile">
