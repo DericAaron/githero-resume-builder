@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Menu.css';
+import AvatarImage from '../../AvatarImage/AvatarImage';
 
 //material ui
 import Drawer from '@material-ui/core/Drawer';
@@ -27,6 +28,10 @@ class Menu extends Component {
   render() {
 
     const menuItems = <List className="menulist">
+                        <ListItem>
+                            <AvatarImage />
+                        </ListItem>
+
                         <Link to="/profile">
                         <ListItem button>
                             <ListItemText primary="Profile" />

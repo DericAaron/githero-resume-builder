@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ResHeader.css';
 import AvatarImage from '../AvatarImage/AvatarImage';
+import ResInfo from '../ResInfo/ResInfo';
 
 class ResHeader extends Component {
 
@@ -22,6 +23,7 @@ class ResHeader extends Component {
             
           </div>
           <img src={"https://ghchart.rshah.org/"+this.props.profile.github_name} alt="" className="headerImg"/>
+          <ResInfo profile={this.props.profile}/>
         </div>
     );
   }

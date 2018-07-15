@@ -8,7 +8,6 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import ResHeader from '../ResHeader/ResHeader';
-import AvatarImage from '../AvatarImage/AvatarImage';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -52,12 +51,12 @@ class Portfolio extends Component {
                 )
               }
             </div>
-            <div className="bio">
+            {/* <div className="bio">
               <Paper >
               <h5>Personal Bio</h5>
                 {this.props.profile.bio}
               </Paper>
-            </div>
+            </div> */}
             
         </div>
       );
