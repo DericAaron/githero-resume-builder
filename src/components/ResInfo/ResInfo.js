@@ -2,11 +2,7 @@
 import React, { Component } from 'react';
 import './ResInfo.css';
 
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
 import Modal from '@material-ui/core/Modal';
@@ -44,12 +40,15 @@ class ResInfo extends Component {
             <Typography variant="title" id="modal-title">
               Additional Information
             </Typography>
+            <Divider />
             <h5>Personal Bio</h5>
             <Typography variant="subheading" id="simple-modal-description">
               {this.props.profile.bio}
             </Typography>
+            <Divider />
             <h5>Email Address:</h5>
             <p>{this.props.profile.email}</p>
+             <Divider />
             <h5>GitHub Account</h5>
             <p>{this.props.profile.github_name}</p>
           </div>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
 import {compose} from 'redux';
 
 const styles = {

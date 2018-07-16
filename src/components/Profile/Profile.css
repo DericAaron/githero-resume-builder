@@ -6,7 +6,10 @@
 }
 
 .profileGrid textarea {
-    width: 90%;
+
+}
+
+.input {
+    width:30%;
     margin-left: 4%;
-    resize: none;
 }

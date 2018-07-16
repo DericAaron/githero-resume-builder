@@ -51,13 +51,6 @@ class Portfolio extends Component {
                 )
               }
             </div>
-            {/* <div className="bio">
-              <Paper >
-              <h5>Personal Bio</h5>
-                {this.props.profile.bio}
-              </Paper>
-            </div> */}
-            
         </div>
       );
     }
