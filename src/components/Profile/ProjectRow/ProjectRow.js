@@ -19,8 +19,10 @@ class ProjectTable extends Component {
   }
 
   removeProject = (id) => {
-    const action = {type: 'DELETE_PROJECT', payload: id};
-    this.props.dispatch(action);
+    if(window.confirm('Confirm Delete')){
+      const action = {type: 'DELETE_PROJECT', payload: id};
+      this.props.dispatch(action);
+    } 
   }
 
   render() {

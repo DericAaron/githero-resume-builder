@@ -7,8 +7,6 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
-import { USER_ACTIONS } from '../../redux/actions/userActions';
-
 const mapStateToProps = state => ({
   user: state.user,
   profile: state.profile.profileEdit.id
@@ -41,7 +39,7 @@ class InfoPage extends Component {
   }
 
   clearInput() {
-    this.setState(new ProjectIn);
+    this.setState(new ProjectIn());
   }
 
   handleChange = (key) => (event) => {

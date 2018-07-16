@@ -17,6 +17,14 @@
     width: 702px;
     height: 103.99px;
     margin: auto;
+    
+  }
+
+  .imageFrame {
+    width: 702px;
+    height: 103.99px;
+    margin: auto;
+    overflow: hidden;
   }
   
   .headText {

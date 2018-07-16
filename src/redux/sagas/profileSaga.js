@@ -15,7 +15,7 @@ function* fetchProfile(action) {
 // submit function
 function* submitProfile(action) {
   try {
-    const profile = yield call(axios.put, `api/profile`, action.payload);
+    yield call(axios.put, `api/profile`, action.payload);
     yield put({type: 'GET_PROFILE'});
   } catch (error) {
     console.log('Error in submitProfileSaga');

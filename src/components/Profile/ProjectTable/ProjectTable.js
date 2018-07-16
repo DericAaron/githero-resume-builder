@@ -28,6 +28,7 @@ class ProjectTable extends Component {
     return (
       <div>
         <Paper >
+            {/* <h3>Projects</h3> */}
             <Table >
                 <TableHead>
                 <TableRow>

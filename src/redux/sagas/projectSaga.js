@@ -14,7 +14,7 @@ function* fetchProject(action) {
 // submit function
 function* submitProject(action) {
   try {
-    const project = yield call(axios.post, `api/project`, action.payload);
+    yield call(axios.post, `api/project`, action.payload);
     yield put({type: 'GET_PROJECTS'});
   } catch (error) {
     console.log('Error in submitProjectSaga');
@@ -23,7 +23,7 @@ function* submitProject(action) {
 
 function* showHideProject(action){
   try {
-    const project = yield call(axios.put, `api/project`, action.payload);
+    yield call(axios.put, `api/project`, action.payload);
     yield put({type: 'GET_PROJECTS'});
   } catch (error) {
     console.log('Error in showHideProjectSaga');
@@ -32,7 +32,7 @@ function* showHideProject(action){
 
 function* removeProject(action){
   try {
-    const project = yield call(axios.delete, `api/project/${action.payload}`);
+    yield call(axios.delete, `api/project/${action.payload}`);
     yield put({type: 'GET_PROJECTS'});
   } catch (error) {
     console.log('Error in removeProjectSaga');

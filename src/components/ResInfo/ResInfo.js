@@ -37,20 +37,22 @@ class ResInfo extends Component {
           onClose={this.handleClose}
         >
           <div className="modalSheet">
-            <Typography variant="title" id="modal-title">
-              Additional Information
-            </Typography>
-            <Divider />
-            <h5>Personal Bio</h5>
-            <Typography variant="subheading" id="simple-modal-description">
-              {this.props.profile.bio}
-            </Typography>
-            <Divider />
-            <h5>Email Address:</h5>
-            <p>{this.props.profile.email}</p>
-             <Divider />
-            <h5>GitHub Account</h5>
-            <p>{this.props.profile.github_name}</p>
+            <div className="modalInside">
+              <Typography variant="title" id="modal-title">
+                Additional Information
+              </Typography>
+              <Divider />
+              <h5>Personal Bio</h5>
+              <Typography variant="subheading" id="simple-modal-description">
+                {this.props.profile.bio}
+              </Typography>
+              <Divider />
+              <h5>Email Address:</h5>
+              <a href={"mailto:"+this.props.profile.email}>{this.props.profile.email}</a>
+              <Divider />
+              <h5>GitHub Account:</h5>
+              <a href={ "https://github.com/" + this.props.profile.github_name } target="_blank">{this.props.profile.github_name}</a>
+            </div>
           </div>
         </Modal>
         </div>
@@ -59,29 +61,3 @@ class ResInfo extends Component {
 }
 
 export default ResInfo;
-
-{/* <ExpansionPanel >
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography >Personal Information</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-                <Typography>
-                    Bio: 
-                    <Divider />
-                    Email: {this.props.profile.email}
-                    <Divider />
-                    Github: {this.props.profile.github_name}
-                </Typography>
-            </ExpansionPanelDetails>
-        </ExpansionPanel> */}
-
-
-
-
-
-
-
-
-
-
-

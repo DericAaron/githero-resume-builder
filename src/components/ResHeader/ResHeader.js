@@ -17,12 +17,15 @@ class ResHeader extends Component {
             </div>
             <div className="headText">
             <h1>{this.props.profile.resume_name}</h1>
-            <p>Email: {this.props.profile.email}</p>
+            
+            <p>{this.props.profile.email}</p>
             </div>
           </div>
             
           </div>
+          <div className="imageFrame">
           <img src={"https://ghchart.rshah.org/"+this.props.profile.github_name} alt="" className="headerImg"/>
+          </div>
           <ResInfo profile={this.props.profile}/>
         </div>
     );

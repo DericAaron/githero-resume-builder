@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './EditButton.css';
 
-import ResHeader from '../../ResHeader/ResHeader';
-
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+import EditPage from '../EditPage/EditPage';
 
 import Modal from '@material-ui/core/Modal';
 import Edit from '@material-ui/icons/Edit';
@@ -31,14 +28,6 @@ handleClose = () => {
     this.setState({ open: false });
 };
 
-  change = (key) => (event) => {
-    const action = {type: 'UPDATE_PROFILE', payload: event.target.value, var: key};
-    this.props.dispatch(action);
-  }
-
-  submitProfile = () => {    
-    this.props.dispatch({type: 'SUBMIT_UPDATE', payload: this.props.profile});
-  }
 
   render() {
     let content = null;
@@ -57,23 +46,7 @@ handleClose = () => {
           onClose={this.handleClose}
         >
           <div className="EditSheet">
-            <Paper>
-                <ResHeader profile={this.props.profile}/>
-                <br/>
-                <br/>
-                <input type="text" placeholder="Name" value={this.props.profile.resume_name} onChange={this.change('resume_name')} className="input"/>
-                <br/>
-                <input type="text" placeholder="Github Account" value={this.props.profile.github_name} onChange={this.change('github_name')} className="input"/>
-                <br/>
-                <input type="text" placeholder="Email Address" value={this.props.profile.email} onChange={this.change('email')} className="input"/>
-                <br/>
-
-                <textarea rows="4" cols="50" placeholder="Personal Bio" maxLength="280"
-                value={this.props.profile.bio} onChange={this.change('bio')}></textarea>
-                <div className="input">
-                <Button variant="contained" color="primary" onClick={this.submitProfile}>Update</Button>
-                </div>
-            </Paper>
+            <EditPage />
           </div>
         </Modal>
         </div>

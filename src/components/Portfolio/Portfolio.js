@@ -47,6 +47,7 @@ class Portfolio extends Component {
                             <ProjectCard project={projectItem}/>
                             </Paper>)
                     }
+                    
                   }  
                 )
               }

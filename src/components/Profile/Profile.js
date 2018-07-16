@@ -9,7 +9,6 @@ import ResHeader from '../ResHeader/ResHeader';
 import EditButton from './EditButton/EditButton';
 
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -29,17 +28,6 @@ class UserPage extends Component {
     if (!this.props.user.isLoading && this.props.user.userName === null) {
       this.props.history.push('home');
     }
-  }
-
-  change = (key) => (event) => {
-    const action = {type: 'UPDATE_PROFILE', payload: event.target.value, var: key};
-    this.props.dispatch(action);
-  }
-
-  submitProfile = () => {
-    console.log('click');
-    
-    this.props.dispatch({type: 'SUBMIT_UPDATE', payload: this.props.profile});
   }
 
   render() {
