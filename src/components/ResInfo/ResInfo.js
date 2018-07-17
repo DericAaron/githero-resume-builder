@@ -26,7 +26,7 @@ class ResInfo extends Component {
   render() {
     
     return (
-        <div>
+        <span className="modalButton">
         <IconButton onClick={this.handleOpen}>
             <Info />
         </IconButton>
@@ -46,16 +46,11 @@ class ResInfo extends Component {
               <Typography variant="subheading" id="simple-modal-description">
                 {this.props.profile.bio}
               </Typography>
-              <Divider />
-              <h5>Email Address:</h5>
-              <a href={"mailto:"+this.props.profile.email}>{this.props.profile.email}</a>
-              <Divider />
-              <h5>GitHub Account:</h5>
-              <a href={ "https://github.com/" + this.props.profile.github_name } target="_blank">{this.props.profile.github_name}</a>
+              <br/>
             </div>
           </div>
         </Modal>
-        </div>
+        </span>
     );
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './SocialBar.css';
 
+import ResInfo from '../../ResInfo/ResInfo';
+
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -49,7 +51,7 @@ class SocialBar extends Component {
           let email = null;
           if(this.props.profile.email){
               email = (
-                <IconButton href={"mailto:"+this.props.profile.email} target="_blank">
+                <IconButton href={"mailto:"+this.props.profile.email}>
                 <SvgIcon>
                 <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                 </SvgIcon>
@@ -70,6 +72,13 @@ class SocialBar extends Component {
          );
      }
 
+     let res = null;
+     if(this.props.profile.bio){
+         res = (
+            <ResInfo profile={this.props.profile}/>
+         );
+     }
+
     return (
         <div className="social">
             <span>
@@ -78,6 +87,7 @@ class SocialBar extends Component {
                 {twit}
                 {email}    
                 {website}
+                {res}
             </span>
         </div>
     );

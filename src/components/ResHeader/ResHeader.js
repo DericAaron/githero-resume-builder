@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ResHeader.css';
 import AvatarImage from '../AvatarImage/AvatarImage';
-import ResInfo from '../ResInfo/ResInfo';
+
 import SocialBar from './SocialBar/SocialBar';
 
 class ResHeader extends Component {
@@ -27,8 +27,8 @@ class ResHeader extends Component {
           <div className="imageFrame">
           <img src={"https://ghchart.rshah.org/"+this.props.profile.github_name} alt="" className="headerImg"/>
           </div>
-          <SocialBar profile={this.props.profile} className="social"/>
-          <ResInfo profile={this.props.profile}/>
+          <SocialBar profile={this.props.profile}/>
+          
 
         </div>
     );
