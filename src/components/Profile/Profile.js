@@ -52,6 +52,12 @@ class UserPage extends Component {
               GitHub Name: {this.props.profile.github_name}
               <br/>
               Email Address: {this.props.profile.email}
+              <br/>
+              LinkedIn: {this.props.profile.linkedin}
+              <br/>
+              Twitter: {this.props.profile.twitter}
+              <br/>
+              Personal Website: {this.props.profile.website}
             
               <br/>
               <br/>

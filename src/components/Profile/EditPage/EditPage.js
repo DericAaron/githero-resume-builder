@@ -50,6 +50,12 @@ class EditPage extends Component {
                 <br/>
                 <input type="text" placeholder="Email Address" value={this.state.email} onChange={this.change('email')} className="input"/>
                 <br/>
+                <input type="text" placeholder="LinkedIn" value={this.state.linkedin} onChange={this.change('linkedin')} className="input"/>
+                <br/>
+                <input type="text" placeholder="Twitter" value={this.state.twitter} onChange={this.change('twitter')} className="input"/>
+                <br/>
+                <input type="text" placeholder="Personal Website" value={this.state.website} onChange={this.change('website')} className="input"/>
+                <br/>
 
                 <textarea rows="4" cols="50" placeholder="Personal Bio" maxLength="280"
                 value={this.state.bio} onChange={this.change('bio')}></textarea>

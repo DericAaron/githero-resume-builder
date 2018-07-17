@@ -10,3 +10,17 @@
   padding: 1rem;
   text-align: center;
 }
+
+.fcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+
+}
+.footNav {
+  margin: auto;
+}
+
+.footNav li{
+  margin: 15px;
+}

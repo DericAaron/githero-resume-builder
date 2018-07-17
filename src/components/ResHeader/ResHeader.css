@@ -15,7 +15,8 @@
   .container {
     position: relative;
     width: 702px;
-    height: 103.99px;
+    /* height: 103.99px; */
+    height: 130px;
     margin: auto;
     
   }

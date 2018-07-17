@@ -10,6 +10,9 @@ CREATE TABLE profile(
 	resume_name VARCHAR(80),
 	github_name VARCHAR(80),
 	email VARCHAR(80),
+	linkedIn VARCHAR(280),
+	twitter VARCHAR(280),
+	website VARCHAR(280),
 	bio VARCHAR(280)
 );
 
