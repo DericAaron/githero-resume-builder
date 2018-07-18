@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-
-import ProjectRow from '../ProjectRow/ProjectRow';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,15 +12,18 @@ import Add from '@material-ui/icons/AddCircle';
 
 //redux store to props
 const mapStateToProps = state => ({
-  user: state.user,
-  projects: state.project.project,
-  skill: state.skill
+  skill: state.skill.skill,
+  profile: state.profile.profileEdit,
 });
 
 //User class
 class ProjectTable extends Component {
 
     // Get skills from DB
+
+    componentDidMount(){
+        this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
+    }// run the skill get call
 
   render() {
 
@@ -40,8 +40,12 @@ class ProjectTable extends Component {
                 </TableHead>
                 <TableBody>
                 {
-                    this.props.projects.map( projectItem =>    
-                    <ProjectRow key={projectItem.id} projectItem={projectItem}/>
+                    this.props.skill.map( skillItem =>    
+                    <TableRow>
+                        <TableCell>{skillItem.skill}</TableCell>
+                        <TableCell>Show</TableCell>
+                        <TableCell>Delete</TableCell>
+                    </TableRow>
                     )
                 }
 
