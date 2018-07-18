@@ -30,6 +30,7 @@ class EditPage extends Component {
 
   submitProfile = () => {    
     this.props.dispatch({type: 'SUBMIT_UPDATE', payload: this.state});
+    this.props.close();
   }
 
   render() {

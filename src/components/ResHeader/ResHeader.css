@@ -22,10 +22,10 @@
   }
 
   .imageFrame {
-    width: 702px;
-    height: 103.99px;
+    width: max-content;
+    height: max-content;
     margin: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   .headText {

@@ -3,6 +3,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     padding-right: 10px;
+    width: 80%;
+    margin: auto;
 }
 
 .cardArea {
@@ -22,5 +24,6 @@
     resize: none;
     width: 100%;
     height: 50px;
+    
 }
 

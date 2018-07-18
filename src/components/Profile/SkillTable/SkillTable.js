@@ -16,15 +16,14 @@ import Add from '@material-ui/icons/AddCircle';
 //redux store to props
 const mapStateToProps = state => ({
   user: state.user,
-  projects: state.project.project
+  projects: state.project.project,
+  skill: state.skill
 });
 
 //User class
 class ProjectTable extends Component {
 
-  componentDidMount() {
-    this.props.dispatch({type: 'GET_PROJECTS'});
-  }
+    // Get skills from DB
 
   render() {
 
@@ -34,7 +33,7 @@ class ProjectTable extends Component {
             <Table >
                 <TableHead>
                 <TableRow>
-                    <TableCell>Project</TableCell>
+                    <TableCell>Skill</TableCell>
                     <TableCell>Show / Hide</TableCell>
                     <TableCell>Delete</TableCell>
                 </TableRow>
@@ -47,15 +46,17 @@ class ProjectTable extends Component {
                 }
 
                 <TableRow>
-                <TableCell component="th" scope="row"></TableCell>
-                <TableCell>
-                <Link to="/project-creator">
-                  <IconButton>
-                    <Add/>
-                  </IconButton>
-                  </Link>
+                <TableCell component="th" scope="row">
+                
                 </TableCell>
-                <TableCell></TableCell>
+                <TableCell>
+                    <IconButton>
+                        <Add/>
+                    </IconButton>
+                </TableCell>
+                <TableCell>
+
+                </TableCell>
               </TableRow>
 
                 </TableBody>

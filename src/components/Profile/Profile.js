@@ -6,7 +6,8 @@ import './Profile.css';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import ProjectTable from  './ProjectTable/ProjectTable';
 import ResHeader from '../ResHeader/ResHeader';
-import EditButton from './EditButton/EditButton';
+import UserTable from './UserTable/UserTable';
+import SkillTable from './SkillTable/SkillTable';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -44,27 +45,24 @@ class UserPage extends Component {
             
           <div className="profileGrid">
             <Paper>
+            <div className="scaler">
             <ResHeader profile={this.props.profile}/>
+            </div>
             <br/>
-            <br/>
-              Resume Name: {this.props.profile.resume_name}
-              <br/>
-              GitHub Name: {this.props.profile.github_name}
-              <br/>
-              Email Address: {this.props.profile.email}
-              <br/>
-              LinkedIn: {this.props.profile.linkedin}
-              <br/>
-              Twitter: {this.props.profile.twitter}
-              <br/>
-              Personal Website: {this.props.profile.website}
+            <hr/>
             
-              <br/>
-              <br/>
-            Personal Bio: {this.props.profile.bio}
-            <EditButton />
+            <div className="inner">
+              <UserTable />
+            </div>
+            <br/>
           </Paper>
+
+          <div className="altGrid">
           <ProjectTable />
+          <SkillTable />
+          {/* Skill Table to be componantized */}
+          
+          </div>
           </div>
         </div>
       );
