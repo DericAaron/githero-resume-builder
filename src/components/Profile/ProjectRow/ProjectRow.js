@@ -7,11 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-class ProjectTable extends Component {
-
-  componentDidMount() {
-    this.props.dispatch({type: 'GET_PROJECTS'});
-  }
+class ProjectRow extends Component {
 
   changeShow = () => {
     const action = {type: 'SHOW_HIDE_PROJECT', payload: {id: this.props.projectItem.id, show_hide: !this.props.projectItem.show_hide}};
@@ -59,4 +55,4 @@ class ProjectTable extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect()(ProjectTable);
+export default connect()(ProjectRow);
