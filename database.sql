@@ -30,11 +30,13 @@ CREATE TABLE project(
 
 CREATE TABLE skill(
 	id serial primary key,
-	skill VARCHAR(80) NOT NULL
+	skill VARCHAR(80) NOT NULL UNIQUE
 );
 
 CREATE TABLE skill_joiner(
 	id serial primary key,
 	profile_id INTEGER REFERENCES profile NOT NULL,
-	skill_id INTEGER REFERENCES skill NOT NULL
+	skill_id INTEGER REFERENCES skill NOT NULL,
+	UNIQUE (profile_id, skill_id)
+
 );

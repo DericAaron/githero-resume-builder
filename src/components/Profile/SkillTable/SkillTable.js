@@ -21,7 +21,37 @@ const mapStateToProps = state => ({
 //User class
 class ProjectTable extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            skillNew: '',
+            skillExist: '0'
+        };
+    }
     // Get skills from DB
+
+    change = (key) => (event) => {
+        this.setState({
+            ...this.state, 
+            [key]: event.target.value
+        });
+    }
+
+    submitSkill(key) {
+        if(this.state[key] === '0' || this.state[key] === '' ){
+            alert('Incorrect Input');
+        } 
+        else if(key === 'skillExist') {
+            let action = {type: 'SUBMIT_SKILL', payload: {sid: this.state[key], pid: this.props.profile.id}}
+            this.props.dispatch(action);
+            
+        }  
+        else if(key === 'skillNew'){
+            let action = {type: 'SUBMIT_NEW_SKILL', payload: {name: this.state.skillNew, pid: this.props.profile.id}}
+            this.props.dispatch(action);
+        }
+    }
 
     componentDidMount(){
         this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
@@ -69,13 +99,17 @@ class ProjectTable extends Component {
                 </TableBody>
             </Table>
 
-            <select name="" id="">
+            <select onChange={this.change('skillExist')} value={this.state.skillExist}>
+                <option value="0"> -- Select -- </option>
                 {
                    this.props.skillDrop.map( skill => 
                     <option value={skill.id} key={skill.id}>{skill.skill}</option>
                     )
                 }
             </select>
+            <button onClick={()=>this.submitSkill('skillExist')}> button E</button>
+            <input type="text" placeholder="Skill Name" value={this.state.skillNew} onChange={this.change('skillNew')} />
+            <button onClick={()=>this.submitSkill('skillNew')}> button N</button>
         </Paper>
       </div>
     );

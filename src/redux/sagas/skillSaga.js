@@ -24,8 +24,9 @@ function* fetchDropSkill(action) {
 // submit function
 function* submitSkill(action) {
   try {
-    yield call(axios.post, `api/skill/existing`, action.payload);
-    yield put({type: 'GET_SKILLS'});
+    const id = action.payload.pid;
+    const skill = yield call(axios.post, `api/skill/existing`, action.payload);
+    yield put({type: 'GET_SKILLS', payload: id});
   } catch (error) {
     console.log('Error in submitProjectSaga');
   }
@@ -33,8 +34,10 @@ function* submitSkill(action) {
 
 function* submitNewSkill(action) {
     try {
-      yield call(axios.post, `api/skill/new`, action.payload);
-      yield put({type: 'GET_SKILLS'});
+        const id = action.payload.pid;
+        const skill =yield call(axios.post, `api/skill/new`, action.payload);
+        yield put({type: 'GET_SKILLS', payload: id});
+        yield put({type: 'GET_ALL_SKILLS'}); //refresh skill dropdown
     } catch (error) {
       console.log('Error in submitProjectSaga');
     }

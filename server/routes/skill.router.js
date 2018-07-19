@@ -37,35 +37,42 @@ router.get('/all', (req, res) => {
 
 
 router.post('/new', (req, res) => {
-    const project = req.body;
+    const skill = req.body.name;
+    const id = req.body.pid
     console.log('recieved:', req.body);
 
-    res.sendStatus(200);
-    // const queryText = `INSERT INTO project (profile_id, project_name, image_url, website_url, git_repo, rawcode, description)
-    //                     VALUES($1, $2 ,$3 ,$4 ,$5 ,$6 ,$7)`;
+    const queryText = `INSERT INTO skill (skill)
+                        VALUES($1) RETURNING id`;
 
-    // pool.query(queryText, [project.profile_id, project.project_name, project.image_url, project.website_url, project.git_repo, project.rawcode, project.description])
-    //     .then( (response) => {
-    //         res.sendStatus(200);
-    //     })
-    //     .catch( (err) => {
-    //         console.log('Error in post project');
-    //         res.sendStatus(500);
-    //     });
-}); //end post projects
+    pool.query(queryText, [skill])
+        .then( (response) => {
+            const queryTwo = `INSERT INTO skill_joiner (profile_id, skill_id)
+            VALUES($1, $2)`;
+            pool.query(queryTwo, [id, response.rows[0].id])
+                .then( (result) => {
+                    res.sendStatus(200);
+                })
+                .catch( (err) => {
+                    res.sendStatus(500);
+                });
+        })
+        .catch( (err) => {
+            res.sendStatus(500);
+        });
+}); //end post new skills
 
 router.post('/existing', (req, res) => {
-    const project = req.body;
-    const queryText = `UPDATE project SET show_hide=$1 WHERE id=$2`;
-
-    res.sendStatus(200);
-    // pool.query(queryText, [project.show_hide, project.id])
-    //     .then( (result) => {
-    //         res.sendStatus(200);
-    //     })
-    //     .catch( (err) => {
-    //         res.sendStatus(500);
-    //     });
+    const skill = req.body.sid;
+    const id = req.body.pid;
+    const queryText = `INSERT INTO skill_joiner (profile_id, skill_id)
+                        VALUES($1, $2)`;
+    pool.query(queryText, [id, skill])
+        .then( (result) => {
+            res.sendStatus(200);
+        })
+        .catch( (err) => {
+            res.sendStatus(500);
+        });
 });
 
 router.delete('/:id', (req, res) => {
