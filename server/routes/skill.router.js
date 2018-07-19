@@ -75,19 +75,19 @@ router.post('/existing', (req, res) => {
         });
 });
 
-router.delete('/:id', (req, res) => {
-    console.log('In project delete request', req.params.id);
+router.delete('/remove/:id', (req, res) => {
+    console.log('In skill delete request', req.params.id);
 
     res.sendStatus(200);
-    // const id = req.params.id;
-    // const queryText = 'DELETE FROM project WHERE id=$1';
-    // pool.query(queryText, [id])
-    //     .then( () => {
-    //         res.sendStatus(200);
-    //     })
-    //     .catch( () => {
-    //         res.sendStatus(500);
-    //     });
+    const id = req.params.id;
+    const queryText = 'DELETE FROM skill_joiner WHERE id=$1';
+    pool.query(queryText, [id])
+        .then( () => {
+            res.sendStatus(200);
+        })
+        .catch( () => {
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;

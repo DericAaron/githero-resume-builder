@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import Add from '@material-ui/icons/AddCircle';
+import Close from '@material-ui/icons/Close';
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -53,6 +54,13 @@ class ProjectTable extends Component {
         }
     }
 
+    removeSkill = (id) => {
+        if(window.confirm('Confirm Delete')){
+          const action = {type: 'DELETE_SKILL', payload: {sid: id, pid: this.props.profile.id}};
+          this.props.dispatch(action);
+        } 
+    }
+
     componentDidMount(){
         this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
         this.props.dispatch({type: 'GET_ALL_SKILLS'});
@@ -67,33 +75,31 @@ class ProjectTable extends Component {
                 <TableHead>
                 <TableRow>
                     <TableCell>Skill</TableCell>
-                    <TableCell>Show / Hide</TableCell>
                     <TableCell>Delete</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
                 {
                     this.props.skill.map( skillItem =>    
-                    <TableRow>
+                    <TableRow key={skillItem.id}>
                         <TableCell>{skillItem.skill}</TableCell>
-                        <TableCell>Show</TableCell>
-                        <TableCell>Delete</TableCell>
+                        <TableCell>
+                            <IconButton>
+                                <Close onClick={() => this.removeSkill(skillItem.id)}/>
+                            </IconButton>
+                        </TableCell>
                     </TableRow>
                     )
                 }
 
                 <TableRow>
-                <TableCell component="th" scope="row">
                 
-                </TableCell>
                 <TableCell>
                     <IconButton>
                         <Add/>
                     </IconButton>
                 </TableCell>
-                <TableCell>
-
-                </TableCell>
+                <TableCell></TableCell>
               </TableRow>
 
                 </TableBody>
@@ -107,7 +113,9 @@ class ProjectTable extends Component {
                     )
                 }
             </select>
+
             <button onClick={()=>this.submitSkill('skillExist')}> button E</button>
+            <br/>
             <input type="text" placeholder="Skill Name" value={this.state.skillNew} onChange={this.change('skillNew')} />
             <button onClick={()=>this.submitSkill('skillNew')}> button N</button>
         </Paper>

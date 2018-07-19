@@ -45,8 +45,9 @@ function* submitNewSkill(action) {
 
 function* removeSkill(action){
   try {
-    yield call(axios.delete, `api/skill/${action.payload}`);
-    yield put({type: 'GET_SKILLS'});
+    const id = action.payload.pid;
+    yield call(axios.delete, `api/skill/remove/${action.payload.sid}`);
+    yield put({type: 'GET_SKILLS', payload: id});
   } catch (error) {
     console.log('Error in removeProjectSaga');
   }
