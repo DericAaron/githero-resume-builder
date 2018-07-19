@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const skill = (state = [{skill: 'React'}, {skill: 'Redux'}], action) => {
+const skill = (state = [], action) => {
                         
                         switch (action.type) {
                             case 'SET_SKILLS':
@@ -10,6 +10,17 @@ const skill = (state = [{skill: 'React'}, {skill: 'Redux'}], action) => {
                           } 
 };
 
+const skillSelect = (state = [], action) => {
+                        
+    switch (action.type) {
+        case 'SET_DROP_SKILLS':
+            return [...action.payload];
+        default:
+          return state;
+      } 
+};
+
 export default combineReducers({
-  skill
+  skill,
+  skillSelect,
 });

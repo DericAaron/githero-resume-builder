@@ -3,11 +3,11 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
-//add routes
-router.get('/:id', (req, res) => {
+//get skills for profile
+router.get('/profile/:id', (req, res) => {
     console.log('In skill Get Request' , req.params.id);
     const id = req.params.id;
-    queryText = `SELECT skill_joiner.id, skill.skill FROM skill
+    const queryText = `SELECT skill_joiner.id, skill.skill FROM skill
                     JOIN skill_joiner ON skill_joiner.skill_id = skill.id
                     WHERE skill_joiner.profile_id=$1 ORDER BY id`;
     pool.query(queryText, [id])
@@ -19,6 +19,20 @@ router.get('/:id', (req, res) => {
             res.sendStatus(500);
         }); 
 }); //end get skills
+
+//get all skills in db
+router.get('/all', (req, res) => {
+    console.log('In skill Get Request ALL');
+    const queryText = `SELECT * FROM skill`;
+    pool.query(queryText)
+        .then( (response) => {
+            res.send(response.rows);
+        })
+        .catch( (err) => {
+            console.log('Error in get skills', err);
+            res.sendStatus(500);
+        }); 
+}); //end get all skills
 
 
 

@@ -4,12 +4,22 @@ import axios from '../../../node_modules/axios';
 
 function* fetchSkill(action) {
     try {
-      const skill = yield call(axios.get, `api/skill/${action.payload}`);
+      const skill = yield call(axios.get, `api/skill/profile/${action.payload}`);
       yield put({type: 'SET_SKILLS', payload: skill.data});
     } catch (error) {
       console.log('Error in fetchProjectSaga');
     }
   } // end fetch project
+
+
+function* fetchDropSkill(action) {
+    try {
+      const skill = yield call(axios.get, `api/skill/all`);
+      yield put({type: 'SET_DROP_SKILLS', payload: skill.data});
+    } catch (error) {
+      console.log('Error in fetchProjectSaga');
+    }
+} // end fetch project
 
 // submit function
 function* submitSkill(action) {
@@ -23,7 +33,7 @@ function* submitSkill(action) {
 
 function* submitNewSkill(action) {
     try {
-      yield call(axios.post, `api/project/new`, action.payload);
+      yield call(axios.post, `api/skill/new`, action.payload);
       yield put({type: 'GET_SKILLS'});
     } catch (error) {
       console.log('Error in submitProjectSaga');
@@ -32,7 +42,7 @@ function* submitNewSkill(action) {
 
 function* removeSkill(action){
   try {
-    yield call(axios.delete, `api/project/${action.payload}`);
+    yield call(axios.delete, `api/skill/${action.payload}`);
     yield put({type: 'GET_SKILLS'});
   } catch (error) {
     console.log('Error in removeProjectSaga');
@@ -43,6 +53,7 @@ function* skillSaga() {
   yield takeLatest('SUBMIT_SKILL', submitSkill);
   yield takeLatest('SUBMIT_NEW_SKILL', submitNewSkill);
   yield takeLatest('GET_SKILLS', fetchSkill);
+  yield takeLatest('GET_ALL_SKILLS', fetchDropSkill);
   yield takeLatest('DELETE_SKILL', removeSkill);
 }
 

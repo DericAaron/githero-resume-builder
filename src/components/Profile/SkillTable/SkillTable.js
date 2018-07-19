@@ -13,6 +13,8 @@ import Add from '@material-ui/icons/AddCircle';
 //redux store to props
 const mapStateToProps = state => ({
   skill: state.skill.skill,
+
+  skillDrop: state.skill.skillSelect,
   profile: state.profile.profileEdit,
 });
 
@@ -23,6 +25,7 @@ class ProjectTable extends Component {
 
     componentDidMount(){
         this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
+        this.props.dispatch({type: 'GET_ALL_SKILLS'});
     }// run the skill get call
 
   render() {
@@ -65,6 +68,14 @@ class ProjectTable extends Component {
 
                 </TableBody>
             </Table>
+
+            <select name="" id="">
+                {
+                   this.props.skillDrop.map( skill => 
+                    <option value={skill.id} key={skill.id}>{skill.skill}</option>
+                    )
+                }
+            </select>
         </Paper>
       </div>
     );
