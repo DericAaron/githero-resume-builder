@@ -4,10 +4,16 @@ import './ResInfo.css';
 
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import { connect } from 'react-redux';
 
 import Modal from '@material-ui/core/Modal';
 import Info from '@material-ui/icons/Info';
 import IconButton from '@material-ui/core/IconButton';
+import Paper from '@material-ui/core/Paper';
+
+const mapStateToProps = state => ({
+  skill: state.skill.skill
+});
 
 class ResInfo extends Component {
 
@@ -48,11 +54,26 @@ class ResInfo extends Component {
               </Typography>
               <br/>
             </div>
-          </div>
+
+            {/* SKills table */}
+            <Paper>
+              <div className="skillGrid">
+              {
+                    this.props.skill.map( skillItem =>    
+                        // <SkillRow skillItem={skillItem} key={skillItem.id}/>
+                        <div key={skillItem.id}>
+                          <p>{skillItem.skill}</p>
+                        </div>
+                    )
+                }
+              </div>
+            </Paper>
+
+          </div>   
         </Modal>
         </span>
     );
   }
 }
 
-export default ResInfo;
+export default connect(mapStateToProps)(ResInfo);

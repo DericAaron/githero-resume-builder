@@ -12,11 +12,17 @@ const mapStateToProps = state => ({
   profile: state.profile.profileEdit,
 });
 
+
+
 class SkillWindow extends Component {
 
 state = {
     open: false,
 };
+
+componentDidMount(){
+  this.props.dispatch({type: 'GET_ALL_SKILLS'});
+}// run the skill get call
     
 handleOpen = () => {
     this.setState({ open: true });

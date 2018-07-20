@@ -3,7 +3,7 @@
     position: 'absolute';
     width: 50%;
     background-color: white;
-    margin-top: 12%;
+    /* margin-top: 12%; */
     margin-left: 25%;
 }
 
@@ -14,4 +14,16 @@
 
 .modalButton {
     width: max-content;
+}
+
+.skillGrid {
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    text-align: center;
+}
+
+.skillGrid div:nth-child(odd) {
+    background-color: rgba(171, 214, 85, 0.582);
 }

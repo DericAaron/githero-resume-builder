@@ -24,17 +24,9 @@ class ProjectTable extends Component {
 
 
     // Get skills from DB
-
-
-
-
-
-
-
-    componentDidMount(){
-        this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
-        this.props.dispatch({type: 'GET_ALL_SKILLS'});
-    }// run the skill get call
+    // componentDidMount(){
+    //     this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
+    // }// run the skill get call
 
   render() {
 

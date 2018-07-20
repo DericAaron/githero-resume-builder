@@ -6,7 +6,8 @@ function* fetchProfile(action) {
     try {
       const profile = yield call(axios.get, 'api/profile', action.payload);
       yield put({type: 'SET_PROFILE', payload: profile.data});
-      yield put({type: 'GET_PROFILE_PIC', payload: profile.data.github_name})
+      yield put({type: 'GET_PROFILE_PIC', payload: profile.data.github_name});
+      yield put({type: 'GET_SKILLS', payload: profile.data.id});
     } catch (error) {
       console.log('Error in fetchProfileSaga');
     }
