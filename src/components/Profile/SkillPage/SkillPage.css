@@ -1,0 +1,15 @@
+.skillArea {
+    width: 80%;
+    margin: auto;
+}
+
+.skillIn {
+    width: 100%;
+    margin-bottom: 10px;
+    left: 0px;
+}
+
+.skillArea button {
+    width: 33%;
+    margin-left: 33%
+}

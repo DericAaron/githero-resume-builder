@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './SkillButton.css';
 
 import Modal from '@material-ui/core/Modal';
 import IconButton from '@material-ui/core/IconButton';

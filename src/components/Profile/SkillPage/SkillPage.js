@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './SkillPage.css';
 
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -47,21 +49,26 @@ class SkillPage extends Component {
     return (
    
             <Paper>
-            <select onChange={this.change('skillExist')} value={this.state.skillExist}>
-                <option value="0"> -- Select -- </option>
-                {
-                   this.props.skillDrop.map( skill => 
-                    <option value={skill.id} key={skill.id}>{skill.skill}</option>
-                    )
-                }
-            </select>
+            <div className="skillArea">
 
-            <button onClick={()=>this.submitSkill('skillExist')}> button E</button>
+            <h4>Add a Skill</h4>
+                <label htmlFor="existing">Skills used by others</label>
+                <select onChange={this.change('skillExist')} value={this.state.skillExist} className="skillIn" id="existing">
+                    <option value="0"> -- Select -- </option>
+                    {
+                    this.props.skillDrop.map( skill => 
+                        <option value={skill.id} key={skill.id}>{skill.skill}</option>
+                        )
+                    }
+                </select>
+                <Button variant="contained" color="primary" onClick={()=>this.submitSkill('skillExist')} className="skillIn">Submit</Button>
             <br/>
-            <input type="text" placeholder="Skill Name" value={this.state.skillNew} onChange={this.change('skillNew')} />
-            <button onClick={()=>this.submitSkill('skillNew')}> button N</button>
+            <hr/>
+                <label htmlFor="new">Create Skill</label>
+                <input id="new" type="text" placeholder="Skill Name" value={this.state.skillNew} onChange={this.change('skillNew')} className="skillIn"/>
+                <Button variant="contained" color="primary" onClick={()=>this.submitSkill('skillNew')} className="skillIn">Submit</Button>
+            </div>
             </Paper>
-
     );
   }
 }

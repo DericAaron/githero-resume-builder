@@ -30,7 +30,7 @@
 }
 
 tbody tr:nth-child(odd){
-    background-color: lightcyan;
+    background-color: rgba(171, 214, 85, 0.582);
 }
 
 .inner td {

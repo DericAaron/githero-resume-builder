@@ -1,10 +1,10 @@
 
 .EditSheet {
     position: 'absolute';
-    width: 702px;
+    width: max-content;
     background-color: white;
+    margin: auto;
     margin-top: 5%;
-    margin-left: 12.5%;
 }
 
 .EditSheet textArea {
