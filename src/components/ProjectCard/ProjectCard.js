@@ -50,7 +50,6 @@ class ProjectCard extends Component {
       content = (
                 
           <CardContent>
-              <h5>Sample Code:</h5>
             <pre><code>
               {
                 this.props.project.rawcode

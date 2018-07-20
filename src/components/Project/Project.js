@@ -82,7 +82,7 @@ class InfoPage extends Component {
                 <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
                 <br/>
                 <br/>
-                <textarea type="text" maxLength="840" placeholder="Raw Code" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
+                <textarea type="text" maxLength="840" placeholder="Additional Formated" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
                 <br/>
                 <textarea type="text" maxLength="280" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
                 <br/>

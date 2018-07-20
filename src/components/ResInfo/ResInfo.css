@@ -3,8 +3,9 @@
     position: 'absolute';
     width: 50%;
     background-color: white;
-    /* margin-top: 12%; */
+    margin-top: 5%;
     margin-left: 25%;
+    padding-bottom: 10px;
 }
 
 .modalInside {
@@ -17,9 +18,9 @@
 }
 
 .skillGrid {
-    width: 85%;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     margin: auto;
     text-align: center;
 }

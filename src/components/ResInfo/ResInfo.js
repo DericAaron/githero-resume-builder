@@ -54,10 +54,10 @@ class ResInfo extends Component {
               </Typography>
               <br/>
             </div>
-
-            {/* SKills table */}
-            <Paper>
-              <div className="skillGrid">
+            <div className="modalInside">
+             <h5>Technical Skills</h5>
+            <Paper className="skillGrid">
+              
               {
                     this.props.skill.map( skillItem =>    
                         // <SkillRow skillItem={skillItem} key={skillItem.id}/>
@@ -66,8 +66,9 @@ class ResInfo extends Component {
                         </div>
                     )
                 }
-              </div>
+              
             </Paper>
+            </div>
 
           </div>   
         </Modal>
