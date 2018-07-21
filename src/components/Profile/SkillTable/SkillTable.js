@@ -22,12 +22,6 @@ const mapStateToProps = state => ({
 //User class
 class ProjectTable extends Component {
 
-
-    // Get skills from DB
-    // componentDidMount(){
-    //     this.props.dispatch({type: 'GET_SKILLS', payload: this.props.profile.id});
-    // }// run the skill get call
-
   render() {
 
     return (
@@ -37,6 +31,7 @@ class ProjectTable extends Component {
                 <TableHead>
                     <TableRow>
                         <TableCell>Skill</TableCell>
+                        <TableCell></TableCell>
                         <TableCell>Delete</TableCell>
                     </TableRow>
                 </TableHead>
@@ -47,7 +42,7 @@ class ProjectTable extends Component {
                     )
                 }
                     <TableRow>
-                    
+                        <TableCell></TableCell>
                         <TableCell>
                             <SkillButton profile={this.props.profile}/>
                         </TableCell>

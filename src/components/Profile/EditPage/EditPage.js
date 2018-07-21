@@ -5,6 +5,8 @@ import ResHeader from '../../ResHeader/ResHeader';
 
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
+
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -31,6 +33,7 @@ class EditPage extends Component {
   submitProfile = () => {    
     this.props.dispatch({type: 'SUBMIT_UPDATE', payload: this.state});
     this.props.close();
+    swal("Your profile has been updated", "", "success");
   }
 
   render() {

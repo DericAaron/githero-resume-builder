@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import ProjectCard from '../ProjectCard/ProjectCard';
+import swal from 'sweetalert';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -58,9 +59,16 @@ class InfoPage extends Component {
   }
 
   submitProject = () => {
-    const action = {type: 'SUBMIT_PROJECT', payload: {profile_id: this.props.profile, ...this.state}};
-    this.props.dispatch(action);
-    this.clearInput();
+
+    if(!(this.state.project_name === '') && !(this.state.description === '') ){
+      const action = {type: 'SUBMIT_PROJECT', payload: {profile_id: this.props.profile, ...this.state}};
+      this.props.dispatch(action);
+      swal(`${this.state.project_name}`, `Has been created!` , "success")
+      this.clearInput();
+    }
+    else {
+      swal(``, `Project must have a name and description!` , "warning");
+    }
   }
 
   render() {
@@ -82,7 +90,7 @@ class InfoPage extends Component {
                 <TextField type="text" label="Git Repository" value={this.state.git_repo} onChange={this.handleChange('git_repo')}/>
                 <br/>
                 <br/>
-                <textarea type="text" maxLength="840" placeholder="Additional Formated" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
+                <textarea type="text" maxLength="840" placeholder="Additional (Formated)" value={this.state.rawcode} onChange={this.handleChange('rawcode')}/>
                 <br/>
                 <textarea type="text" maxLength="280" placeholder="Description" value={this.state.description} onChange={this.handleChange('description')}/>
                 <br/>

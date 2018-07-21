@@ -4,6 +4,7 @@ import './SkillPage.css';
 
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
 
 //redux store to props
 const mapStateToProps = state => ({
@@ -31,16 +32,20 @@ class SkillPage extends Component {
 
     submitSkill(key) {
         if(this.state[key] === '0' || this.state[key] === '' ){
-            alert('Incorrect Input');
+            swal("", "Unable to add skill, Invalid Input!", "warning");
         } 
         else if(key === 'skillExist') {
             let action = {type: 'SUBMIT_SKILL', payload: {sid: this.state[key], pid: this.props.profile.id}}
             this.props.dispatch(action);
+            swal("", `Skill has been added to portfolio!` , "success")
+                .then(this.props.handleClose());
             
         }  
         else if(key === 'skillNew'){
             let action = {type: 'SUBMIT_NEW_SKILL', payload: {name: this.state.skillNew, pid: this.props.profile.id}}
             this.props.dispatch(action);
+            swal("", `Skill has been added to portfolio!` , "success")
+                .then(this.props.handleClose());
         }
     }
 

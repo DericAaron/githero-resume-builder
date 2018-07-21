@@ -6,6 +6,7 @@ import TableRow from '@material-ui/core/TableRow';
 import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import swal from 'sweetalert';
 
 class ProjectRow extends Component {
 
@@ -14,11 +15,29 @@ class ProjectRow extends Component {
     this.props.dispatch(action);
   }
 
-  removeProject = (id) => {
-    if(window.confirm('Confirm Delete')){
-      const action = {type: 'DELETE_PROJECT', payload: id};
-      this.props.dispatch(action);
-    } 
+  removeProject = (project) => {
+    
+    const projectName = project.project_name;
+    const id = project.id
+
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, this project cannot be restored!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((remove) => {
+      if (remove) {
+          const action = {type: 'DELETE_PROJECT', payload: id};
+          this.props.dispatch(action);
+          swal(`${projectName} has been removed from your profile!`, {
+              icon: "success",
+          });
+      } else {
+        swal(`${projectName} was not removed!`);
+      }
+    });
   }
 
   render() {
@@ -46,7 +65,7 @@ class ProjectRow extends Component {
                 <TableCell>{hideButton}</TableCell>
                 <TableCell>
                     <IconButton>
-                        <Close onClick={() => this.removeProject(this.props.projectItem.id)}/>
+                        <Close onClick={() => this.removeProject(this.props.projectItem)}/>
                     </IconButton>
                 </TableCell>
               </TableRow>

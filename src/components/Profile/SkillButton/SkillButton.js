@@ -48,7 +48,7 @@ handleClose = () => {
           onClose={this.handleClose}
         >
           <div className="EditSheet">
-            <SkillPage />
+            <SkillPage handleClose={this.handleClose}/>
           </div>
         </Modal>
         </div>
