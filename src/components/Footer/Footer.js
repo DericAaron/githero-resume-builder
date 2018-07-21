@@ -13,8 +13,7 @@ class Footer extends Component {
           <hr/>
           <div className="fcontainer">
             <ul className="footNav">
-              <li>Contact</li>
-              <li>Contact</li>
+              <li>Join the Project</li>
               <li>Contact</li>
             </ul>
 
@@ -27,9 +26,8 @@ class Footer extends Component {
             </div>
 
             <ul className="footNav">
-              <li>Contact</li>
-              <li>Contact</li>
-              <li>Contact</li>
+              <li>About</li>
+              <li>History</li>
             </ul>
           </div>
 

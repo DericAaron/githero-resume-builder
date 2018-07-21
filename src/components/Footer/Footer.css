@@ -1,13 +1,10 @@
 
 .footer {
-    /* background-color: black; */
     width: 80%;
     margin: auto;
     left: 0;
     bottom: 0;
-
-
-  padding: 1rem;
+  padding-top: 20px;
   text-align: center;
 }
 
