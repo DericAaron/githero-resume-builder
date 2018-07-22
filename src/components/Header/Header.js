@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
 
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
@@ -23,7 +24,7 @@ class Header extends Component {
 
   logout = () => {
     this.props.dispatch(triggerLogout());
-    // this.props.history.push('home');
+    swal("", "Logged out!", "success");
   }
 
 
