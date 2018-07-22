@@ -71,6 +71,26 @@ class InfoPage extends Component {
     }
   }
 
+  // Used to input data for demonstration
+  demoInput = () => {
+    this.setState(
+      {
+        project_name: 'Ta Do - List Application',
+        image_url: 'http://i1383.photobucket.com/albums/ah287/Dahrun/Screen%20Shot%202018-07-22%20at%201.16.03%20PM_zpsteoziyn2.png',
+        website_url: '',
+        git_repo: 'https://github.com/DericAaron/weekend-3-mean-todo-list',
+        rawcode: `Technologies used:
+        Mongo
+        Express
+        Angular
+        NodeJS
+    
+    *** Now that is one "MEAN" Stack! ***`,
+        description: 'Ta Do is a list application that the user can submit tasks to and sort them by completion. Completed tasks will be green and appear at the bottom of the page.'
+      }
+    );
+  } //end demo
+
   render() {
     let content = null;
 
@@ -96,6 +116,8 @@ class InfoPage extends Component {
                 <br/>
                 <br/>
                 <Button variant="contained" onClick={this.submitProject}>Add Project</Button>
+                
+                <Button variant="contained" onClick={this.demoInput}>Demo</Button>
               </div>
             </Paper>
             <div className="cardArea">

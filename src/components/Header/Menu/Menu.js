@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Menu.css';
 import AvatarImage from '../../AvatarImage/AvatarImage';
 
@@ -12,6 +13,11 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { Link } from 'react-router-dom';
+
+const mapStateToProps = state => ({
+    user: state.user,
+  });
+  
 
 class Menu extends Component {
 
@@ -80,4 +86,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default connect(mapStateToProps)(Menu);
