@@ -4,6 +4,8 @@ import './Footer.css';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 
+import { Link } from 'react-router-dom';
+
 class Footer extends Component {
 
   render() {
@@ -26,8 +28,8 @@ class Footer extends Component {
             </div>
 
             <ul className="footNav">
-              <li>About</li>
-              <li>History</li>
+              <Link to="/about"><li>About</li></Link>
+              <Link to="/history"><li>History</li></Link>
             </ul>
           </div>
 

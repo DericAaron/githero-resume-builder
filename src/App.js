@@ -13,6 +13,8 @@ import Profile from './components/Profile/Profile';
 import Project from './components/Project/Project';
 import Portfolio from './components/Portfolio/Portfolio';
 import Footer from './components/Footer/Footer';
+import About from './components/About/About';
+import History from './components/History/History';
 
 import './styles/main.css';
 
@@ -45,6 +47,16 @@ const App = () => (
         <Route
           path="/portfolio"
           component={Portfolio}
+        />
+
+        <Route
+          path="/about"
+          component={About}
+        />
+
+        <Route
+          path="/history"
+          component={History}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
